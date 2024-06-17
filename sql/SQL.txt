@@ -1,0 +1,121 @@
+CREATE DATABASE WebStore
+
+ Create table Supplier(          
+    Id int IDENTITY(1,1) NOT NULL,
+    FirstName varchar(50) NOT NULL,
+    LastName varchar(50) NOT NULL,
+    Email varchar(30) NOT NULL,
+    Address varchar(220)  NULL,
+    CONSTRAINT [PK_Supplier] PRIMARY KEY CLUSTERED ([Id] ASC)
+)
+
+ Create table Product(          
+    Id int IDENTITY(1,1) NOT NULL,
+    SupplierId int NOT NULL,
+    Name varchar(50) NOT NULL,
+    Description varchar(50) NOT NULL,
+    Value decimal (18,2)  NOT NULL,
+    DateRegister DATETIME2 (7),
+    CONSTRAINT [PK_Producto] PRIMARY KEY CLUSTERED ([Id] ASC)
+)
+
+Create procedure spAddSupplier          
+(          
+    @FirstName VARCHAR(50),
+    @LastName VARCHAR(50),
+    @Email VARCHAR(30),
+    @Address VARCHAR(220)          
+)          
+as           
+Begin           
+    Insert into Supplier (FirstName,LastName,Email, Address)           
+    Values (@FirstName,@LastName,@Email,@Address)           
+End 
+
+
+Create procedure spAddProduct          
+(
+    @SupplierId INT, 	          
+    @Name VARCHAR(50),
+    @Description VARCHAR(50),
+    @Value DECIMAL(18,2),
+    @DateRegister DATETIME2(7)          
+)          
+as           
+Begin           
+    Insert into Product (SupplierId, Name, Description, Value, DateRegister)           
+    Values (@SupplierId, @Name,@Description,@Value,@DateRegister)           
+End
+
+Create procedure spUpdateSupplier          
+(   
+    @Id INTEGER ,       
+    @FirstName VARCHAR(50),
+    @LastName VARCHAR(50),
+    @Email VARCHAR(30),
+    @Address VARCHAR(220)          
+)          
+as           
+Begin           
+   Update Supplier
+   set FirstName=@FirstName,            
+   LastName=@LastName,            
+   Email=@Email,          
+   Mobile=@Mobile,   
+   Address=@Address            
+   where Id=@Id           
+End 
+
+
+Create procedure spUpdateProduct          
+(
+    @Id INTEGER ,
+    @SupplierId INT, 	          
+    @Name VARCHAR(50),
+    @Description VARCHAR(50),
+    @Value DECIMAL(18,2),
+    @DateRegister DATETIME2(7)          
+)          
+as           
+Begin           
+   Update Product
+   set
+   Name=@Name,
+   Description=@Description,
+   Value=@Value,
+   where Id=@Id
+End
+
+Create procedure spDeleteSupplier
+(            
+   @Id int            
+)            
+as             
+begin            
+   Delete from Supplier where Id=@Id            
+End  
+
+Create procedure spDeleteProduct           
+(            
+   @Id int            
+)            
+as             
+begin            
+   Delete from Product where Id=@Id            
+End
+
+Create procedure spGetAllSuppliers        
+as        
+Begin        
+    select *        
+    from Supplier     
+    order by Id   
+End
+
+Create procedure spGetAllProducts        
+as        
+Begin        
+    select *        
+    from Product     
+    order by Id   
+End

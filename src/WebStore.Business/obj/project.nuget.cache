@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "SNJLqQZuuko=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Cristiano\\source\\repos\\cclautert\\WebStore\\src\\WebStore.Business\\WebStore.Business.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Cristiano\\.nuget\\packages\\fluentvalidation\\11.7.1\\fluentvalidation.11.7.1.nupkg.sha512"
+  ],
+  "logs": []
+}

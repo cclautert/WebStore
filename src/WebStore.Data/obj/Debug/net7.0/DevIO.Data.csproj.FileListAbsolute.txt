@@ -1,0 +1,17 @@
+C:\Users\Cristiano\Downloads\01 - TodosOsProjetos\M05A09 - Funcionamento da arquitetura no MVC\ApiTresCamadas\src\DevIO.Data\bin\Debug\net7.0\DevIO.Data.deps.json
+C:\Users\Cristiano\Downloads\01 - TodosOsProjetos\M05A09 - Funcionamento da arquitetura no MVC\ApiTresCamadas\src\DevIO.Data\bin\Debug\net7.0\DevIO.Data.runtimeconfig.json
+C:\Users\Cristiano\Downloads\01 - TodosOsProjetos\M05A09 - Funcionamento da arquitetura no MVC\ApiTresCamadas\src\DevIO.Data\bin\Debug\net7.0\DevIO.Data.dll
+C:\Users\Cristiano\Downloads\01 - TodosOsProjetos\M05A09 - Funcionamento da arquitetura no MVC\ApiTresCamadas\src\DevIO.Data\bin\Debug\net7.0\DevIO.Data.pdb
+C:\Users\Cristiano\Downloads\01 - TodosOsProjetos\M05A09 - Funcionamento da arquitetura no MVC\ApiTresCamadas\src\DevIO.Data\bin\Debug\net7.0\DevIO.Business.dll
+C:\Users\Cristiano\Downloads\01 - TodosOsProjetos\M05A09 - Funcionamento da arquitetura no MVC\ApiTresCamadas\src\DevIO.Data\bin\Debug\net7.0\DevIO.Business.pdb
+C:\Users\Cristiano\Downloads\01 - TodosOsProjetos\M05A09 - Funcionamento da arquitetura no MVC\ApiTresCamadas\src\DevIO.Data\obj\Debug\net7.0\DevIO.Data.csproj.AssemblyReference.cache
+C:\Users\Cristiano\Downloads\01 - TodosOsProjetos\M05A09 - Funcionamento da arquitetura no MVC\ApiTresCamadas\src\DevIO.Data\obj\Debug\net7.0\DevIO.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Cristiano\Downloads\01 - TodosOsProjetos\M05A09 - Funcionamento da arquitetura no MVC\ApiTresCamadas\src\DevIO.Data\obj\Debug\net7.0\DevIO.Data.AssemblyInfoInputs.cache
+C:\Users\Cristiano\Downloads\01 - TodosOsProjetos\M05A09 - Funcionamento da arquitetura no MVC\ApiTresCamadas\src\DevIO.Data\obj\Debug\net7.0\DevIO.Data.AssemblyInfo.cs
+C:\Users\Cristiano\Downloads\01 - TodosOsProjetos\M05A09 - Funcionamento da arquitetura no MVC\ApiTresCamadas\src\DevIO.Data\obj\Debug\net7.0\DevIO.Data.csproj.CoreCompileInputs.cache
+C:\Users\Cristiano\Downloads\01 - TodosOsProjetos\M05A09 - Funcionamento da arquitetura no MVC\ApiTresCamadas\src\DevIO.Data\obj\Debug\net7.0\DevIO.Data.csproj.Up2Date
+C:\Users\Cristiano\Downloads\01 - TodosOsProjetos\M05A09 - Funcionamento da arquitetura no MVC\ApiTresCamadas\src\DevIO.Data\obj\Debug\net7.0\DevIO.Data.dll
+C:\Users\Cristiano\Downloads\01 - TodosOsProjetos\M05A09 - Funcionamento da arquitetura no MVC\ApiTresCamadas\src\DevIO.Data\obj\Debug\net7.0\refint\DevIO.Data.dll
+C:\Users\Cristiano\Downloads\01 - TodosOsProjetos\M05A09 - Funcionamento da arquitetura no MVC\ApiTresCamadas\src\DevIO.Data\obj\Debug\net7.0\DevIO.Data.pdb
+C:\Users\Cristiano\Downloads\01 - TodosOsProjetos\M05A09 - Funcionamento da arquitetura no MVC\ApiTresCamadas\src\DevIO.Data\obj\Debug\net7.0\DevIO.Data.genruntimeconfig.cache
+C:\Users\Cristiano\Downloads\01 - TodosOsProjetos\M05A09 - Funcionamento da arquitetura no MVC\ApiTresCamadas\src\DevIO.Data\obj\Debug\net7.0\ref\DevIO.Data.dll

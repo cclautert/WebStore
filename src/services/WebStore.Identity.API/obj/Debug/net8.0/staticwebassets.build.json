@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "z0jPk3PylWbSFb1EktDKAVeF18TaoGE0QGpIo2tLmvw=",
+  "Source": "WebStore.Identity.API",
+  "BasePath": "_content/WebStore.Identity.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
