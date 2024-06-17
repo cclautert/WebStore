@@ -21,7 +21,7 @@ namespace WebStore.Products.Api.Tests.Controller
             var controller = new ProductController(mockRepo.Object, mockService.Object, mockMapper.Object, mockNotifier.Object);
 
             // Act
-            var result = controller.GetAll() as Task<IEnumerable<ProductViewModel>>;
+            var result = controller.GetAll() as Task<IEnumerable<ProductIdViewModel>>;
 
             // Assert
             Assert.NotNull(result);
@@ -58,7 +58,7 @@ namespace WebStore.Products.Api.Tests.Controller
             var controller = new ProductController(mockRepo.Object, mockService.Object, mockMapper.Object, mockNotifier.Object);
 
             // Act
-            var result = controller.GetAll() as Task<IEnumerable<ProductViewModel>>;
+            var result = controller.GetAll() as Task<IEnumerable<ProductIdViewModel>>;
 
             // Assert
             Assert.NotNull(result);

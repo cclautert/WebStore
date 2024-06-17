@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WebStore.Identity.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b9779c726997e0c25a7456102d39eae1c24db4b3")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9020dfb296e7fb279e46ab0e96c8afad2c881b33")]
 [assembly: System.Reflection.AssemblyProductAttribute("WebStore.Identity.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WebStore.Identity.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

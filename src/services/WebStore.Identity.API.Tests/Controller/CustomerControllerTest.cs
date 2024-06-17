@@ -21,7 +21,7 @@ namespace WebStore.Identity.API.Tests.Controller
             var controller = new CustomerController(mockMapper.Object, mockRepo.Object, mockService.Object, mockNotifier.Object);
 
             // Act
-            var result = controller.GetAll() as Task<IEnumerable<CustomerViewModel>>;
+            var result = controller.GetAll() as Task<IEnumerable<CustomerIdViewModel>>;
 
             // Assert
             Assert.NotNull(result);
@@ -58,7 +58,7 @@ namespace WebStore.Identity.API.Tests.Controller
             var controller = new CustomerController(mockMapper.Object, mockRepo.Object, mockService.Object, mockNotifier.Object);
 
             // Act
-            var result = controller.GetAll() as Task<IEnumerable<CustomerViewModel>>;
+            var result = controller.GetAll() as Task<IEnumerable<CustomerIdViewModel>>;
 
             // Assert
             Assert.NotNull(result);
