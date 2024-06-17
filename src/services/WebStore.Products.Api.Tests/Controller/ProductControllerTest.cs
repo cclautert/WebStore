@@ -78,7 +78,7 @@ namespace WebStore.Products.Api.Tests.Controller
             var result = controller.GetAll();
 
             // Assert
-            var viewResult = Assert.IsType<Task<IEnumerable<ProductViewModel>>>(result);
+            var viewResult = Assert.IsType<Task<IEnumerable<ProductIdViewModel>>>(result);
             Assert.Equal(0, viewResult.Result.Count());
         }
 

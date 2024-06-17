@@ -5,7 +5,7 @@ using WebStore.Business.Notifications;
 using WebStore.Business.Services;
 using WebStore.Data.Repository;
 
-namespace WebStore.Products.Api.Configurations
+namespace WebStore.Products.API.Configurations
 {
     public static class DependencyInjectionConfig
     {

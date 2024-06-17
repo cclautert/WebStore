@@ -78,7 +78,7 @@ namespace WebStore.Identity.API.Tests.Controller
             var result = controller.GetAll();
 
             // Assert
-            var viewResult = Assert.IsType<Task<IEnumerable<CustomerViewModel>>>(result);
+            var viewResult = Assert.IsType<Task<IEnumerable<CustomerIdViewModel>>>(result);
             Assert.Equal(0, viewResult.Result.Count());
         }
 

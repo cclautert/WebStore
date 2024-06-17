@@ -1,6 +1,3 @@
-using WebStore.Business.Interfaces;
-using WebStore.Data.Repository;
-using WebStore.Products.Api.Configurations;
 using WebStore.Products.API.Configurations;
 
 var builder = WebApplication.CreateBuilder(args);
