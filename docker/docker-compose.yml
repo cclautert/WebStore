@@ -13,10 +13,14 @@ services:
         image: cclautert/webstore-identity-api:latest
         container_name: webstore-identity-api            
         restart: always
+        expose:
+            - 5101
+        ports:
+            - "5102:5102"
         environment: 
             ASPNETCORE_ENVIRONMENT: WebStore
-            ASPNETCORE_URLS: https://+:5101;http://+5102
-            CUSTOMCONNSTR_DefaultConnection: "Server=database-identity;Database=DSUsers;MultipleActiveResultSets=true;User Id=sa;Password=MyDB@123"
+            ASPNETCORE_URLS: http://+5101
+            CUSTOMCONNSTR_DefaultConnection: "Server=database;Database=DSUsers;MultipleActiveResultSets=true;User Id=sa;Password=MyDB@123"
             AppSettings__DatabaseType: SqlServer
         depends_on:
             - database
@@ -25,10 +29,14 @@ services:
         image: cclautert/webstore-product-api:latest
         container_name: webstore-product-api        
         restart: always
+        expose:
+            - 5201
+        ports:
+            - "5202:5202"
         environment: 
             ASPNETCORE_ENVIRONMENT: WebStore
-            ASPNETCORE_URLS: https://+:5201;http://+5202
-            CUSTOMCONNSTR_DefaultConnection: "Server=database-catalog;Database=DSCatalog;MultipleActiveResultSets=true;User Id=sa;Password=MyDB@123"
+            ASPNETCORE_URLS: http://+5201
+            CUSTOMCONNSTR_DefaultConnection: "Server=database;Database=DSCatalog;MultipleActiveResultSets=true;User Id=sa;Password=MyDB@123"
             AppSettings__DatabaseType: SqlServer
         depends_on:
             - database
