@@ -18,9 +18,9 @@ namespace WebStore.Business.Services
         {
             if (!RunValidation(new ProductValidation(), product)) return;
 
-            var ExistingProduct = _productRepository.GetByIdAsync(product.Id);
+            var ExistingProduct = await _productRepository.GetByIdAsync(product.Id);
 
-            if(ExistingProduct != null)
+            if(ExistingProduct.Name != null)
             {
                 Notify("Já existe um produto com o ID informado!");
                 return;

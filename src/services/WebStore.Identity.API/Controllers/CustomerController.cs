@@ -26,9 +26,9 @@ namespace WebStore.Identity.API.Controllers
         }
 
         [HttpGet]
-        public async Task<IEnumerable<CustomerViewModel>> GetAll()
+        public async Task<IEnumerable<CustomerIdViewModel>> GetAll()
         {
-            return _mapper.Map<IEnumerable<CustomerViewModel>>(await _customerRepository.GetAllAsync());
+            return _mapper.Map<IEnumerable<CustomerIdViewModel>>(await _customerRepository.GetAllAsync());
         }
 
         [HttpGet("{id:guid}")]

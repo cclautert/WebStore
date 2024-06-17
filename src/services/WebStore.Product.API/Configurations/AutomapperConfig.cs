@@ -11,6 +11,7 @@ namespace WebStore.Products.Api.Configurations
             CreateMap<ProductViewModel, Product>();
 
             CreateMap<Product, ProductViewModel>();
+            CreateMap<Product, ProductIdViewModel>();
         }
     }
 }

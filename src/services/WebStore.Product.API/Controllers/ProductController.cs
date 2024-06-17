@@ -26,9 +26,9 @@ namespace WebStore.Products.Api.Controllers
         }
 
         [HttpGet]
-        public async Task<IEnumerable<ProductViewModel>> GetAll()
+        public async Task<IEnumerable<ProductIdViewModel>> GetAll()
         {
-            return _mapper.Map<IEnumerable<ProductViewModel>>(await _productRepository.GetAllAsync());                               
+            return _mapper.Map<IEnumerable<ProductIdViewModel>>(await _productRepository.GetAllAsync());                               
         }
 
         [HttpGet("{id:guid}")]

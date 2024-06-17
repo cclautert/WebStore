@@ -66,7 +66,7 @@ namespace WebStore.Data.Repository
                 SqlCommand cmd = new SqlCommand(StoredProcedures.UpdateCustomer, con);  
                 cmd.CommandType = CommandType.StoredProcedure;  
   
-                cmd.Parameters.AddWithValue("@Id", customer.Id);  
+                cmd.Parameters.AddWithValue("@Id", customer.Id.ToString());  
                 cmd.Parameters.AddWithValue("@FirstName", customer.FirstName);  
                 cmd.Parameters.AddWithValue("@LastName", customer.LastName);  
                 cmd.Parameters.AddWithValue("@Email", customer.Email);
@@ -86,7 +86,7 @@ namespace WebStore.Data.Repository
             Customer customer = new Customer();
 
             await using SqlConnection con = GetConnection();
-            string sqlQuery = "SELECT * FROM Customer WHERE Id= " + id;  //Needs to change because security
+            string sqlQuery = $"SELECT * FROM Customer WHERE Id='{id}' ";
             SqlCommand cmd = new SqlCommand(sqlQuery, con);  
             con.Open();  
             SqlDataReader rdr = await cmd.ExecuteReaderAsync();  

@@ -9,6 +9,7 @@ namespace WebStore.Identity.API.Configurations
         public AutomapperConfig() 
         {
             CreateMap<Customer, CustomerViewModel>().ReverseMap();
+            CreateMap<Customer, CustomerIdViewModel>().ReverseMap();
             CreateMap<User, UserViewModel>().ReverseMap();
         }
     }

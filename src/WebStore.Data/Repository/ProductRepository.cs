@@ -62,7 +62,7 @@ namespace WebStore.Data.Repository
             Product product = new Product();
 
             await using SqlConnection con = GetConnection();
-            string sqlQuery = "SELECT * FROM Product WHERE Id= " + id;  //Needs to change because security
+            string sqlQuery = $"SELECT * FROM Product WHERE Id='{id}' ";  //Needs to change because security
             SqlCommand cmd = new SqlCommand(sqlQuery, con);  
             con.Open();  
             SqlDataReader rdr = await cmd.ExecuteReaderAsync();  
@@ -111,6 +111,7 @@ namespace WebStore.Data.Repository
                 SqlCommand cmd = new SqlCommand("spUpdateProduct", con);
                 cmd.CommandType = CommandType.StoredProcedure;
 
+                cmd.Parameters.AddWithValue("@Id", product.Id);
                 cmd.Parameters.AddWithValue("@Name", product.Name);
                 cmd.Parameters.AddWithValue("@Description", product.Description);
                 cmd.Parameters.AddWithValue("@Value", product.Value);

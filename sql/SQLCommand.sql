@@ -59,7 +59,7 @@ GO
     Description varchar(50) NOT NULL,
     Value decimal (18,2)  NOT NULL,
     DateRegister DATETIME2 (7),
-    CONSTRAINT [PK_Producto] PRIMARY KEY CLUSTERED ([Id] ASC)
+    CONSTRAINT [PK_Product] PRIMARY KEY CLUSTERED ([Id] ASC)
 )
 GO
 SET ANSI_PADDING OFF
@@ -95,8 +95,8 @@ Create procedure spAddUser
     @Id uniqueidentifier,
     @Name VARCHAR(50),
     @Email VARCHAR(30),
-    @PasswordHash varchar(100),
-    @PasswordSalt varchar(100)
+    @PasswordHash varbinary(max),
+    @PasswordSalt varbinary(max)
 )          
 as           
 Begin           
@@ -113,7 +113,6 @@ GO
 Create procedure spAddProduct          
 (
     @Id uniqueidentifier,
-    @SupplierId uniqueidentifier,
     @Name VARCHAR(50),
     @Description VARCHAR(50),
     @Value DECIMAL(18,2),
@@ -146,7 +145,7 @@ Begin
    LastName=@LastName,            
    Email=@Email,
    Address=@Address            
-   where Id=@Id           
+   where Id=@Id
 End 
 GO
 
@@ -160,8 +159,8 @@ Create procedure spUpdateUser
     @Id uniqueidentifier,
     @Name VARCHAR(50),
     @Email VARCHAR(30),
-    @PasswordHash varchar(100),
-    @PasswordSalt varchar(100)
+    @PasswordHash varbinary(max),
+    @PasswordSalt varbinary(max)
 )          
 as           
 Begin           
@@ -181,8 +180,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 Create procedure spUpdateProduct          
 (
-    @Id uniqueidentifier ,
-    @SupplierId INT, 	          
+    @Id uniqueidentifier,
     @Name VARCHAR(50),
     @Description VARCHAR(50),
     @Value DECIMAL(18,2),

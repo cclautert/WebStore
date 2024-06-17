@@ -69,7 +69,7 @@ namespace WebStore.Data.Repository
             {
                 await using SqlConnection con = GetConnection();
                 SqlCommand cmd = new SqlCommand(StoredProcedures.UpdateUser, con);  
-                cmd.CommandType = CommandType.StoredProcedure;  
+                cmd.CommandType = CommandType.StoredProcedure;
   
                 cmd.Parameters.AddWithValue("@Id", user.Id);  
                 cmd.Parameters.AddWithValue("@Name", user.Name);  
@@ -177,8 +177,8 @@ namespace WebStore.Data.Repository
                 user.Id = Guid.Parse(rdr["Id"].ToString());
                 user.Name = rdr["Name"].ToString();
                 user.Email = rdr["Email"].ToString();  
-                user.PasswordHash = Encoding.ASCII.GetBytes(rdr["PasswordHash"].ToString());
-                user.PasswordHSalt = Encoding.ASCII.GetBytes(rdr["PasswordHSalt"].ToString());
+                user.PasswordHash = (byte[])rdr["PasswordHash"];
+                user.PasswordHSalt = (byte[])rdr["PasswordSalt"];
   
                 lstUser.Add(user);  
             }  
