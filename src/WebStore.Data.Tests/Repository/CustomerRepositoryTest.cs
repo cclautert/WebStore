@@ -13,12 +13,11 @@ namespace WebStore.Data.Tests.Repository
             string? firstName = "First";
             string? lastName = "Last";
             string? email = "last@gmail.com";
-            string? password = "123456";
             string? address = "Florida";
 
             //Act
             var customerRepository = new Mock<ICustomerRepository>();
-            var customer = new Customer(firstName, lastName, email, password, address);
+            var customer = new Customer(firstName, lastName, email, address);
             var result = customerRepository.Object.CreateAsync(customer);
 
             //Assert
@@ -33,12 +32,11 @@ namespace WebStore.Data.Tests.Repository
             string? firstName = "First";
             string? lastName = "Last";
             string? email = "last@gmail.com";
-            string? password = "123456";
             string? address = "Florida";
 
             //Act
             var customerRepository = new Mock<ICustomerRepository>();
-            var customer = new Customer(firstName, lastName, email, password, address);
+            var customer = new Customer(firstName, lastName, email, address);
             var result = customerRepository.Object.UpdateAsync(customer);
 
             //Assert
@@ -70,22 +68,6 @@ namespace WebStore.Data.Tests.Repository
             //Act
             var customerRepository = new Mock<ICustomerRepository>();
             var result = customerRepository.Object.GetByIdAsync(id);
-
-            //Assert
-            Assert.NotNull(result);
-            Assert.Equal(result.IsCompleted, true);
-        }
-
-        [Fact]
-        public void SignIn_Customer_With_Sucess()
-        {
-            //Arrange
-            string email = "test@test.com";
-            string password = "123456";
-
-            //Act
-            var customerRepository = new Mock<ICustomerRepository>();
-            var result = customerRepository.Object.PasswordSignInAsync(email, password);
 
             //Assert
             Assert.NotNull(result);

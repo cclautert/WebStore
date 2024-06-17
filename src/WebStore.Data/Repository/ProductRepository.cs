@@ -62,7 +62,7 @@ namespace WebStore.Data.Repository
             Product product = new Product();
 
             await using SqlConnection con = GetConnection();
-            string sqlQuery = "SELECT * FROM Product WHERE Id= " + id;  
+            string sqlQuery = "SELECT * FROM Product WHERE Id= " + id;  //Needs to change because security
             SqlCommand cmd = new SqlCommand(sqlQuery, con);  
             con.Open();  
             SqlDataReader rdr = await cmd.ExecuteReaderAsync();  

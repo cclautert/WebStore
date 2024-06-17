@@ -91,7 +91,6 @@ namespace WebStore.Identity.API.Tests.Controller
                 FirstName = "Test One",
                 LastName = "Test One",
                 Email = "Test One",
-                Password = "Test One",
                 Address = "Test One",
             });
             lstCustomer.Add(new Customer()
@@ -100,7 +99,6 @@ namespace WebStore.Identity.API.Tests.Controller
                 FirstName = "Test two",
                 LastName = "Test two",
                 Email = "Test two",
-                Password = "Test two",
                 Address = "Test two",
             });
             return lstCustomer;

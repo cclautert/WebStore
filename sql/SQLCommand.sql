@@ -15,9 +15,30 @@ GO
     FirstName varchar(50) NOT NULL,
     LastName varchar(50) NOT NULL,
     Email varchar(30) NOT NULL,
-    Password varchar(100) NOT NULL,
     Address varchar(220) NULL,
-    CONSTRAINT [PK_Supplier] PRIMARY KEY CLUSTERED ([Id] ASC)
+    CONSTRAINT [PK_Customer] PRIMARY KEY CLUSTERED ([Id] ASC)
+)
+GO
+SET ANSI_PADDING OFF
+GO
+
+USE [WebStore]
+GO
+/****** Object:  Table [dbo].[Supplier]    Script Date: 16/06/2024 2:53:11 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+
+ Create table User_Authentication(          
+    Id uniqueidentifier NOT NULL,
+    Name varchar(50) NOT NULL,
+    Email varchar(30) NOT NULL,
+    PasswordHash varbinary(max) NOT NULL,
+    PasswordSalt varbinary(max) NOT NULL,
+    CONSTRAINT [PK_User] PRIMARY KEY CLUSTERED ([Id] ASC)
 )
 GO
 SET ANSI_PADDING OFF
@@ -44,7 +65,7 @@ GO
 SET ANSI_PADDING OFF
 GO
 
-/****** Object:  StoredProcedure [dbo].[spAddSupplier]    Script Date: 16/06/2024 2:53:11 PM ******/
+/****** Object:  StoredProcedure [dbo].[spAddCustomer]    Script Date: 16/06/2024 2:53:11 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -55,13 +76,32 @@ Create procedure spAddCustomer
     @FirstName VARCHAR(50),
     @LastName VARCHAR(50),
     @Email VARCHAR(30),
-    @Password VARCHAR(100), 
     @Address VARCHAR(220)          
 )          
 as           
 Begin           
-    Insert into Customer (Id,FirstName,LastName,Email,Password,Address)           
-    Values (@Id,@FirstName,@LastName,@Email,@Password,@Address)           
+    Insert into Customer (Id,FirstName,LastName,Email,Address)           
+    Values (@Id,@FirstName,@LastName,@Email,@Address)           
+End 
+GO
+
+/****** Object:  StoredProcedure [dbo].[spAddUser]    Script Date: 16/06/2024 2:53:11 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+Create procedure spAddUser
+(
+    @Id uniqueidentifier,
+    @Name VARCHAR(50),
+    @Email VARCHAR(30),
+    @PasswordHash varchar(100),
+    @PasswordSalt varchar(100)
+)          
+as           
+Begin           
+    Insert into User_Authentication (Id,Name,Email,PasswordHash,PasswordSalt)           
+    Values (@Id,@Name,@Email,@PasswordHash,@PasswordSalt)           
 End 
 GO
 
@@ -86,7 +126,7 @@ Begin
 End
 GO
 
-/****** Object:  StoredProcedure [dbo].[spUpdateSupplier]    Script Date: 16/06/2024 2:53:11 PM ******/
+/****** Object:  StoredProcedure [dbo].[spUpdateCustomer]    Script Date: 16/06/2024 2:53:11 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -97,7 +137,6 @@ Create procedure spUpdateCustomer
     @FirstName VARCHAR(50),
     @LastName VARCHAR(50),
     @Email VARCHAR(30),
-    @Password VARCHAR(100), 
     @Address VARCHAR(220)          
 )          
 as           
@@ -106,8 +145,31 @@ Begin
    set FirstName=@FirstName,            
    LastName=@LastName,            
    Email=@Email,
-   Password=@Password,
    Address=@Address            
+   where Id=@Id           
+End 
+GO
+
+/****** Object:  StoredProcedure [dbo].[spUpdateUser]    Script Date: 16/06/2024 2:53:11 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+Create procedure spUpdateUser
+(   
+    @Id uniqueidentifier,
+    @Name VARCHAR(50),
+    @Email VARCHAR(30),
+    @PasswordHash varchar(100),
+    @PasswordSalt varchar(100)
+)          
+as           
+Begin           
+   Update User_Authentication
+   set Name=@Name,
+   Email=@Email,
+   PasswordHash=@PasswordHash,
+   PasswordSalt=@PasswordSalt          
    where Id=@Id           
 End 
 GO
@@ -137,7 +199,7 @@ Begin
 End
 GO
 
-/****** Object:  StoredProcedure [dbo].[spDeleteSupplier]    Script Date: 16/06/2024 2:53:11 PM ******/
+/****** Object:  StoredProcedure [dbo].[spDeleteCustomer]    Script Date: 16/06/2024 2:53:11 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -149,6 +211,21 @@ Create procedure spDeleteCustomer
 as             
 begin            
    Delete from Customer where Id=@Id            
+End
+GO
+
+/****** Object:  StoredProcedure [dbo].[spDeleteUser]    Script Date: 16/06/2024 2:53:11 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+Create procedure spDeleteUser
+(            
+   @Id uniqueidentifier            
+)            
+as             
+begin            
+   Delete from User_Authentication where Id=@Id            
 End
 GO
 
@@ -167,16 +244,30 @@ begin
 End
 GO
 
-/****** Object:  StoredProcedure [dbo].[spGetAllSuppliers]    Script Date: 16/06/2024 2:53:11 PM ******/
+/****** Object:  StoredProcedure [dbo].[spGetAllCustomer]    Script Date: 16/06/2024 2:53:11 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-Create procedure spGetAllCustomers
+Create procedure spGetAllCustomer
 as        
 Begin        
     select *        
     from Customer     
+    order by Id   
+End
+GO
+
+/****** Object:  StoredProcedure [dbo].[spGetAllUser]    Script Date: 16/06/2024 2:53:11 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+Create procedure spGetAllUser
+as        
+Begin        
+    select *        
+    from User_Authentication     
     order by Id   
 End
 GO

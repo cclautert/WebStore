@@ -237,8 +237,3 @@ ModelManifest.xml
 
 # Paket dependency manager
 .paket/paket.exe
-
-# FAKE - F# Make
-.fake/
-/ASP.NET Core/03 - WebAPI/Projetos/01 MinhaAPICompleta 3.1/API/MinhaAPICompleta.sln.DotSettings.zip
-/ASP.NET Core/04 - Enterprise Applications/Projetos/Instrutor/NerdStoreEnterprise/ComunicacaoFilaIdentidadeCliente.rar

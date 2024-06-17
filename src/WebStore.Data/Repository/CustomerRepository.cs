@@ -47,7 +47,6 @@ namespace WebStore.Data.Repository
                 cmd.Parameters.AddWithValue("@FirstName", customer.FirstName);
                 cmd.Parameters.AddWithValue("@LastName", customer.LastName);
                 cmd.Parameters.AddWithValue("@Email", customer.Email);
-                cmd.Parameters.AddWithValue("@Password", customer.Password);
                 cmd.Parameters.AddWithValue("@Address", customer.Address);
                 con.Open();
                 await cmd.ExecuteNonQueryAsync();
@@ -70,8 +69,7 @@ namespace WebStore.Data.Repository
                 cmd.Parameters.AddWithValue("@Id", customer.Id);  
                 cmd.Parameters.AddWithValue("@FirstName", customer.FirstName);  
                 cmd.Parameters.AddWithValue("@LastName", customer.LastName);  
-                cmd.Parameters.AddWithValue("@Email", customer.Email); 
-                cmd.Parameters.AddWithValue("@Password", customer.Password);
+                cmd.Parameters.AddWithValue("@Email", customer.Email);
                 cmd.Parameters.AddWithValue("@Address", customer.Address);  
                 con.Open();  
                 cmd.ExecuteNonQuery();  
@@ -88,7 +86,7 @@ namespace WebStore.Data.Repository
             Customer customer = new Customer();
 
             await using SqlConnection con = GetConnection();
-            string sqlQuery = "SELECT * FROM Customer WHERE Id= " + id;  
+            string sqlQuery = "SELECT * FROM Customer WHERE Id= " + id;  //Needs to change because security
             SqlCommand cmd = new SqlCommand(sqlQuery, con);  
             con.Open();  
             SqlDataReader rdr = await cmd.ExecuteReaderAsync();  
@@ -99,26 +97,11 @@ namespace WebStore.Data.Repository
                 customer.FirstName = rdr["FirstName"].ToString();  
                 customer.LastName = rdr["LastName"].ToString();  
                 customer.Email = rdr["Email"].ToString();
-                customer.Password = rdr["Password"].ToString(); 
                 customer.Address = rdr["Address"].ToString();  
             }
 
             return customer;
         }
-
-        public async Task<bool> PasswordSignInAsync(string email, string password)
-        {
-            Customer supplier = new Customer();
-
-            await using SqlConnection con = GetConnection();
-            string sqlQuery = $"SELECT * FROM Customer WHERE Email='{email}' AND Password='{password}'";  
-            SqlCommand cmd = new SqlCommand(sqlQuery, con);  
-            con.Open();  
-            SqlDataReader rdr = await cmd.ExecuteReaderAsync();
-
-            return rdr.HasRows;
-        }
-
         public async Task<List<Customer>> GetAllAsync()
         {
             List<Customer> lstSupplier = new List<Customer>();

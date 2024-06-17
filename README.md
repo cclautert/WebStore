@@ -6,16 +6,18 @@ I can create, read, update and delete products,
 to standardize and manage registered products.
 
 
-Architecture:
+Architecture 3 Layers: 
+    - Services layer
+    - Businnes layer
+    - Data layer
 
-3 Layers
-    Services layer
-    Businnes layer
-    Data layer
-
-Database:
+Database: 
     SqlServer
 
 
-GuitHug:
+GuitHub: 
     https://github.com/cclautert/WebStore
+
+DockerHub: 
+    - https://hub.docker.com/repository/docker/cclautert/webstore-product-api/general
+    - https://hub.docker.com/repository/docker/cclautert/webstore-identity-api/general

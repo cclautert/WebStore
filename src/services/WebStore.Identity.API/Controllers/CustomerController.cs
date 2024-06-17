@@ -1,5 +1,6 @@
 ﻿using System.Net;
 using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using WebStore.Business.Interfaces;
 using WebStore.Business.Models;
@@ -7,7 +8,7 @@ using WebStore.Identity.API.ViewModels;
 
 namespace WebStore.Identity.API.Controllers
 {
-    [Route("api/supplier")]
+    [Route("api/customer")]
     public class CustomerController : MainController
     {
         private readonly IMapper _mapper;
@@ -39,8 +40,9 @@ namespace WebStore.Identity.API.Controllers
 
             return supplier;
         }
-
+        
         [HttpPost]
+        [Authorize]
         public async Task<ActionResult<CustomerViewModel>> Create(CustomerViewModel customerViewModel)
         {
             if (!ModelState.IsValid) return CustomResponse(ModelState);
@@ -51,6 +53,7 @@ namespace WebStore.Identity.API.Controllers
         }
 
         [HttpPut("{id:guid}")]
+        [Authorize]
         public async Task<ActionResult<CustomerViewModel>> Update(Guid id, CustomerViewModel customerViewModel)
         {
             if (!ModelState.IsValid) return CustomResponse(ModelState);
@@ -61,6 +64,7 @@ namespace WebStore.Identity.API.Controllers
         }
 
         [HttpDelete("{id:guid}")]
+        [Authorize]
         public async Task<ActionResult<CustomerViewModel>> Delete(Guid id)
         {
             await _customerService.RemoveAsync(id);
@@ -70,22 +74,6 @@ namespace WebStore.Identity.API.Controllers
         private async Task<CustomerViewModel> GetCustomerById(Guid id)
         {
             return _mapper.Map<CustomerViewModel>(await _customerRepository.GetByIdAsync(id));
-        }
-
-        [HttpPost("autenticar")]
-        public async Task<ActionResult> Login(CustomerLoginViewModel customerLogin)
-        {
-            if (!ModelState.IsValid) return CustomResponse(ModelState);
-
-            var result = await _customerRepository.PasswordSignInAsync(customerLogin.Email, customerLogin.Password);
-
-            if (result)
-            {
-                return CustomResponse(HttpStatusCode.OK);
-            }
-
-            NotifyError("Incorrect username or password");
-            return CustomResponse();
         }
     }
 }

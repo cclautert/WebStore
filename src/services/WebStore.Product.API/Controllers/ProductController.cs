@@ -1,5 +1,6 @@
 ﻿using System.Net;
 using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using WebStore.Business.Interfaces;
 using WebStore.Business.Models;
@@ -41,6 +42,7 @@ namespace WebStore.Products.Api.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         public async Task<ActionResult<ProductViewModel>> Create(ProductViewModel produtoViewModel)
         {
             if (!ModelState.IsValid) return CustomResponse(ModelState);
@@ -51,6 +53,7 @@ namespace WebStore.Products.Api.Controllers
         }
 
         [HttpPut("{id:guid}")]
+        [Authorize]
         public async Task<IActionResult> Update(Guid id, ProductViewModel produtoViewModel)
         {
             if (!ModelState.IsValid) return CustomResponse(ModelState);
@@ -68,6 +71,7 @@ namespace WebStore.Products.Api.Controllers
         }
 
         [HttpDelete("{id:guid}")]
+        [Authorize]
         public async Task<ActionResult<ProductViewModel>> Delete(Guid id)
         {
             var product = await GetProductById(id);

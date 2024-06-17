@@ -16,14 +16,14 @@ namespace WebStore.Business.Services
 
         public async Task CreateAsync(Customer customer)
         {
-            if (!RunValidation(new SupplierValidation(), customer)) return;
+            if (!RunValidation(new CustomerValidation(), customer)) return;
 
             await _customerRepository.CreateAsync(customer);
         }
 
         public async Task UpdateAsync(Customer customer)
         {
-            if (!RunValidation(new SupplierValidation(), customer)) return;
+            if (!RunValidation(new CustomerValidation(), customer)) return;
 
             await _customerRepository.UpdateAsync(customer);
         }

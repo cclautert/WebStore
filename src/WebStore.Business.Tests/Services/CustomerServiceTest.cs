@@ -14,11 +14,10 @@ namespace WebStore.Business.Tests.Services
             string? firstName = "First";
             string? lastName = "Last";
             string? email = "last@gmail.com";
-            string? password = "123456";
             string? address = "Florida";
 
             //Act
-            var customer = new Customer(firstName, lastName, email, password, address);
+            var customer = new Customer(firstName, lastName, email, address);
             var customerRepository = new Mock<ICustomerRepository>();
             var notifier = new Mock<INotifier>();
             CustomerService customerService = new CustomerService(customerRepository.Object, notifier.Object);
@@ -37,11 +36,10 @@ namespace WebStore.Business.Tests.Services
             string? firstName = "First";
             string? lastName = "Last";
             string? email = "last@gmail.com";
-            string? password = "123456";
             string? address = "Florida";
 
             //Act
-            var customer = new Customer(firstName, lastName, email, password, address);
+            var customer = new Customer(firstName, lastName, email, address);
             var customerRepository = new Mock<ICustomerRepository>();
             var notifier = new Mock<INotifier>();
             CustomerService customerService = new CustomerService(customerRepository.Object, notifier.Object);
