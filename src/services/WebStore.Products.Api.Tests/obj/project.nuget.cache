@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "XqTYHVA5iJA=",
+  "dgSpecHash": "MqECKbdiXpg=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Cristiano\\source\\repos\\cclautert\\WebStore\\src\\services\\WebStore.Products.Api.Tests\\WebStore.Products.Api.Tests.csproj",
+  "projectFilePath": "C:\\Users\\Cristiano\\source\\repos\\cclautert\\WebStore\\src\\services\\WebStore.Products.Api.Tests\\WebStore.Products.API.Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Cristiano\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\Cristiano\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",

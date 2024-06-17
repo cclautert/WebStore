@@ -6,7 +6,7 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v8.0": {
-      "WebStore.Products.Api.Tests/1.0.0": {
+      "WebStore.Products.API.Tests/1.0.0": {
         "dependencies": {
           "Microsoft.NET.Test.Sdk": "17.8.0",
           "Moq.AutoMock": "3.5.0",
@@ -16,7 +16,7 @@
           "xunit.runner.visualstudio": "2.5.3"
         },
         "runtime": {
-          "WebStore.Products.Api.Tests.dll": {}
+          "WebStore.Products.API.Tests.dll": {}
         }
       },
       "AutoMapper/12.0.1": {
@@ -1483,24 +1483,11 @@
         "runtime": {
           "WebStore.Data.dll": {}
         }
-      },
-      "WebStore.Products.Api/1.0.0": {
-        "dependencies": {
-          "AutoMapper.Extensions.Microsoft.DependencyInjection": "12.0.1",
-          "Microsoft.AspNetCore.OpenApi": "7.0.11",
-          "Swashbuckle.AspNetCore": "6.5.0",
-          "WebStore.Business": "1.0.0",
-          "WebStore.Data": "1.0.0",
-          "AutoMapper": "12.0.1"
-        },
-        "runtime": {
-          "WebStore.Products.Api.dll": {}
-        }
       }
     }
   },
   "libraries": {
-    "WebStore.Products.Api.Tests/1.0.0": {
+    "WebStore.Products.API.Tests/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
@@ -2456,11 +2443,6 @@
       "sha512": ""
     },
     "WebStore.Data/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "WebStore.Products.Api/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

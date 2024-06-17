@@ -18,8 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\WebStore.Api\WebStore.Products.Api.csproj" />
-    <ProjectReference Include="..\WebStore.Product.Api\WebStore.Products.API.csproj" />
+    <ProjectReference Include="..\WebStore.Identity.API\WebStore.Identity.API.csproj" />
   </ItemGroup>
 
   <ItemGroup>

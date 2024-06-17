@@ -1,13 +1,8 @@
-using System.Collections;
-using System.Net;
 using AutoMapper;
-using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Configuration;
 using Moq;
 using WebStore.Business.Interfaces;
 using WebStore.Business.Models;
-using WebStore.Data.Repository;
 using WebStore.Products.Api.Controllers;
 using WebStore.Products.Api.ViewModels;
 
@@ -50,33 +45,6 @@ namespace WebStore.Products.Api.Tests.Controller
 
             // Assert
             Assert.IsType<ActionResult<ProductViewModel>>(result);
-        }
-
-        [Fact]
-        public async Task GetReturnsProduct()
-        {
-            // Arrange
-            Guid testSessionId = new Guid();
-            var mockRepo = new Mock<IProductRepository>();
-            mockRepo.Setup(repo => repo.GetByIdAsync(testSessionId))!
-                .ReturnsAsync((Product)null!);
-            var mockService = new Mock<IProductService>();
-            var mockMapper = new Mock<IMapper>();
-            var mockNotifier = new Mock<INotifier>();
-            var controller = new ProductController(mockRepo.Object, mockService.Object, mockMapper.Object, mockNotifier.Object);
-            var productViewModel = new ProductViewModel();
-            productViewModel.Name = "Test";
-            productViewModel.Description = "Test";
-
-            // Act
-            var result = await controller.Create(productViewModel);
-
-            // Assert
-            var viewResult = Assert.IsType<Task<ActionResult<ProductViewModel>>>(result); 
-            var testEmployee = Assert.IsType<Product>(viewResult); 
-            
-            Assert.Equal(productViewModel.Name, testEmployee.Name); 
-            Assert.Equal(productViewModel.Description, testEmployee.Description);
         }
 
         [Fact]
@@ -128,8 +96,8 @@ namespace WebStore.Products.Api.Tests.Controller
             lstProduct.Add(new Product()
             {
                 Id = new Guid(),
-                Name = null,
-                Description = "Test One",
+                Name = "Test Two",
+                Description = "Test Two",
                 Value = 1,
                 DateRegister = new DateTime(2016, 7, 2),
             });

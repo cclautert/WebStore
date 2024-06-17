@@ -6,7 +6,7 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v8.0": {
-      "WebStore.Products.Api/1.0.0": {
+      "WebStore.Products.API/1.0.0": {
         "dependencies": {
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "12.0.1",
           "Microsoft.AspNetCore.OpenApi": "7.0.11",
@@ -16,7 +16,7 @@
           "AutoMapper": "12.0.1"
         },
         "runtime": {
-          "WebStore.Products.Api.dll": {}
+          "WebStore.Products.API.dll": {}
         }
       },
       "AutoMapper/12.0.1": {
@@ -485,7 +485,7 @@
     }
   },
   "libraries": {
-    "WebStore.Products.Api/1.0.0": {
+    "WebStore.Products.API/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

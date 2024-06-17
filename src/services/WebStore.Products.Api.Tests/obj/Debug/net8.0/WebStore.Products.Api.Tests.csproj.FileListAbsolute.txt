@@ -152,9 +152,9 @@ C:\Users\Cristiano\source\repos\cclautert\WebStore\src\services\WebStore.Product
 C:\Users\Cristiano\source\repos\cclautert\WebStore\src\services\WebStore.Products.Api.Tests\obj\Debug\net8.0\WebStore.Products.Api.Tests.AssemblyInfo.cs
 C:\Users\Cristiano\source\repos\cclautert\WebStore\src\services\WebStore.Products.Api.Tests\obj\Debug\net8.0\WebStore.Products.Api.Tests.csproj.CoreCompileInputs.cache
 C:\Users\Cristiano\source\repos\cclautert\WebStore\src\services\WebStore.Products.Api.Tests\obj\Debug\net8.0\WebStore.Products.Api.Tests.sourcelink.json
-C:\Users\Cristiano\source\repos\cclautert\WebStore\src\services\WebStore.Products.Api.Tests\obj\Debug\net8.0\WebStore.E4E61DD7.Up2Date
 C:\Users\Cristiano\source\repos\cclautert\WebStore\src\services\WebStore.Products.Api.Tests\obj\Debug\net8.0\WebStore.Products.Api.Tests.dll
 C:\Users\Cristiano\source\repos\cclautert\WebStore\src\services\WebStore.Products.Api.Tests\obj\Debug\net8.0\refint\WebStore.Products.Api.Tests.dll
 C:\Users\Cristiano\source\repos\cclautert\WebStore\src\services\WebStore.Products.Api.Tests\obj\Debug\net8.0\WebStore.Products.Api.Tests.pdb
 C:\Users\Cristiano\source\repos\cclautert\WebStore\src\services\WebStore.Products.Api.Tests\obj\Debug\net8.0\WebStore.Products.Api.Tests.genruntimeconfig.cache
 C:\Users\Cristiano\source\repos\cclautert\WebStore\src\services\WebStore.Products.Api.Tests\obj\Debug\net8.0\ref\WebStore.Products.Api.Tests.dll
+C:\Users\Cristiano\source\repos\cclautert\WebStore\src\services\WebStore.Products.Api.Tests\obj\Debug\net8.0\WebStore.4CF5BDD3.Up2Date
