@@ -14,6 +14,8 @@
 ## Database: 
     SqlServer
 
+## Modern Data Storage:
+    Not used Entity Framework, Dapper, or Mediator.
 
 ## GuitHub: 
     https://github.com/cclautert/WebStore
